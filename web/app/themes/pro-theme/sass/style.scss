@@ -1,0 +1,138 @@
+/*!
+Theme Name: pro-theme
+Theme URI: http://underscores.me/
+Author: Muhammad Gordlo
+Author URI: http://ai19.be
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: pro-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+pro-theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "plugins/jetpack/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
+
+/* Page sections
+--------------------------------------------- */
+@import "page-sections/navbar";
+@import "page-sections/hero";
+@import "page-sections/services";
+@import "page-sections/cta";
+@import "page-sections/request";
+@import "page-sections/masthead";
+@import "page-sections/content";
+@import "page-sections/hero-page";
+@import "page-sections/contact-cards";
+@import "page-sections/contact";
+@import "page-sections/our-services";
+@import "page-sections/tarieven";
+@import "page-sections/regios";
+@import "page-sections/regios-page";
+@import "page-sections/faq";
+@import "page-sections/service-categories";
+@import "page-sections/footer";
+
+/* Buttons
+--------------------------------------------- */
+@import "buttons/button-primary";
+@import "buttons/button-outline";
+
+/* Footer
+--------------------------------------------- */
+@import "footer/footer";
+@import "footer/pre-footer";
+
+/* Contact
+--------------------------------------------- */
+@import "contact/contact-form";
+
+@import "main";

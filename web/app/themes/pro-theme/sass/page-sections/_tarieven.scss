@@ -1,0 +1,108 @@
+// Variables
+$primary-color: #ff8129;
+$bg-light: #f8f9fa;
+$text-dark: #212529;
+$border-light: #e9ecef;
+$border-medium: #dee2e6;
+$shadow-light: rgba(0, 0, 0, 0.05);
+$container-width: 1140px;
+$border-radius: 8px;
+
+// Tarieven Section
+.tarieven {
+  background-color: #fff;
+  
+  // Section Base Styles
+  &.section-padding {
+    padding: 80px 0;
+  }
+  
+  &.fix {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  // Layout components
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    
+    &.justify-content-center {
+      justify-content: center;
+    }
+  }
+  
+  // Column styles
+  .col-12 {
+    padding: 0 15px;
+    width: 100%;
+  }
+  
+  .col-xl-7 {
+    padding: 0 15px;
+    width: 100%;
+    
+    @media (min-width: 1200px) {
+      width: 58.333333%;
+    }
+  }
+  
+  // Table styling
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: $text-dark;
+    border-collapse: collapse;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: $shadow-light;
+  }
+  
+  .price-table {
+    box-shadow: 0 5px 20px $shadow-light;
+    border-radius: $border-radius;
+    overflow: hidden;
+    
+    thead {
+      background-color: $primary-color;
+      color: white;
+      
+      th {
+        font-weight: 600;
+        text-align: left;
+        border-bottom: 2px solid $border-medium;
+      }
+    }
+    
+    th, td {
+      padding: 14px 20px;
+      vertical-align: middle;
+      border-bottom: 1px solid $border-light;
+    }
+    
+    tbody {
+      th {
+        font-weight: 600;
+        text-align: left;
+      }
+      
+      td {
+        text-align: left;
+      }
+      
+      tr:last-child {
+        th, td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

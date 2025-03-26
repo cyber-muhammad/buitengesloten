@@ -1,0 +1,150 @@
+// Variables
+$primary-color: #fd7e14;
+$background-color: #0365a5;
+$white: #ffffff;
+$card-bg: #ffffff;
+$text-color: #333333;
+$transition: all 0.3s ease-in-out;
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+.services-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+
+    .section-title {
+        margin-bottom: 50px;
+
+        h2 {
+            color: $primary-color;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 20px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .service-card {
+        display: block;
+        text-decoration: none;
+        color: $text-color;
+        height: 100%;
+        transition: $transition;
+
+        &:hover {
+            transform: translateY(-5px);
+
+            .service-card-inner {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                border-color: $primary-color;
+
+                .service-icon {
+                    background-color: $primary-color;
+                    
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+
+                h3 {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .service-card-inner {
+        background-color: $card-bg;
+        border-radius: 8px;
+        padding: 30px;
+        height: 100%;
+        border: 1px solid #eee;
+        box-shadow: $box-shadow;
+        transition: $transition;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-icon {
+        width: 90px;
+        height: 90px;
+        background-color: rgba($primary-color, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        transition: $transition;
+
+        img {
+            width: 45px;
+            height: 45px;
+            transition: $transition;
+        }
+    }
+
+    .service-content {
+        h3 {
+            color: $text-color;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            transition: $transition;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Responsive Adjustments
+@media (max-width: 991px) {
+    .services-section {
+        padding: 60px 0;
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .services-section {
+        padding: 40px 0;
+
+        .service-card-inner {
+            padding: 20px;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        .service-content {
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

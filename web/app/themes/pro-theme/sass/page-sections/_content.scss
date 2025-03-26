@@ -1,0 +1,21 @@
+#content {
+    font-family: $font__main;
+
+    .project-details-content {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem;
+
+            li {
+                margin-bottom: 1rem;
+            }
+
+            i {
+                color: $secondary;
+                font-size: 18px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

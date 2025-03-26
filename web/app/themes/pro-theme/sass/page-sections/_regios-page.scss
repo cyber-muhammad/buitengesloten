@@ -1,0 +1,118 @@
+.slotenmaker-regions-wrapper {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Province Card Styling */
+.province-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+}
+
+.province-header {
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.province-divider {
+    width: 4px;
+    height: 40px;
+    background: #f8971d; /* Orange color from original */
+    margin-right: 15px;
+    border-radius: 2px;
+}
+
+.province-label {
+    font-size: 14px;
+    color: #777;
+    margin: 0 10px 0 0;
+}
+
+.province-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f8971d; /* Orange color from original */
+    margin: 0;
+    flex-grow: 1;
+}
+
+.province-toggle {
+    color: #f8971d;
+    transition: transform 0.3s;
+    transform: rotate(90deg);
+}
+
+.province-toggle.active i {
+    transform: rotate(90deg);
+}
+
+.province-content {
+    max-height: 600px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.province-body {
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.municipality-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.municipality-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.municipality-list a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 14px;
+}
+
+.municipality-list a:hover {
+    color: #f8971d;
+}
+
+@media (max-width: 767px) {
+    .province-header {
+        padding: 15px;
+    }
+    
+    .province-name {
+        font-size: 18px;
+    }
+    
+    .municipality-list {
+        gap: 8px;
+    }
+}

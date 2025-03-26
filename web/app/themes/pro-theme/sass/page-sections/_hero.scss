@@ -1,0 +1,103 @@
+#hero {
+    width: 100%;
+    height: 52%;
+    z-index: 1;
+    position: relative;
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
+    background-color: $primary;
+
+    &::before {
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: $primary;
+        clip-path: polygon(0 0,100% 0,100% 70%,0 100%);
+        position: absolute;
+        @media screen and (max-width: $xl) {
+            clip-path: none;
+        }
+    
+    }
+
+    @media screen and (max-width: $sm) {
+        height: 100vh;
+    }
+
+    .promo {
+        padding: 8px;
+        color: #fff;
+        background: #b3a709;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        @media (min-width: 1398px) {
+            width: 80%;
+            font-size: 18px;
+
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        margin-top: 60px;
+        h1 {
+            font-size: 86px;
+            line-height: 110%;
+            font-weight: 800;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+
+            @media screen and (max-width: $xl) {
+                text-align: center;
+            }
+            @media screen and (max-width: $md) {
+                font-size: 38px;
+                padding: 0;
+            }
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 1.4em;
+
+            @media screen and (max-width: $xl) {
+                text-align: center;
+            }
+            @media screen and (max-width: $sm) {
+                font-size: 16px;
+            }
+        }
+
+        .content-image {
+            @media screen and (max-width: $xl) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: $xl) {
+            margin-top: 10px;
+        }
+    }
+
+    i {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    a {
+        color: #fff;
+    }
+}

@@ -1,0 +1,246 @@
+// Variables
+$footer-bg: #003354;
+$primary-color: #fd7e14;
+$text-light: rgba(255, 255, 255, 0.8);
+$border-light: rgba(255, 255, 255, 0.1);
+$transition: all 0.3s ease;
+
+.footer {
+    background-color: $footer-bg;
+    color: #ffffff;
+    
+    // Footer Widgets Section
+    .footer-widgets {
+        padding: 80px 0 50px;
+        
+        .footer-widget {
+            margin-bottom: 30px;
+        }
+    }
+
+    // Company Info Styles
+    .company-info {
+        .footer-logo {
+            display: block;
+            margin-bottom: 20px;
+            
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        p {
+            color: $text-light;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .company-details {
+            margin: 20px 0;
+            
+            p {
+                margin-bottom: 8px;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: $primary-color;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: $transition;
+            font-weight: 500;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    // Widget Common Styles
+    .widget-title {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: $primary-color;
+        }
+    }
+
+    // Links Styles
+    .contact-list,
+    .sitemap-links,
+    .services-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 12px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: $text-light;
+                text-decoration: none;
+                transition: $transition;
+                font-size: 0.95rem;
+                display: inline-block;
+
+                &:hover {
+                    color: $primary-color;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+
+    // Footer Bottom
+    .footer-bottom {
+        padding: 25px 0;
+        border-top: 1px solid $border-light;
+
+        .copyright {
+            p {
+                margin: 0;
+                font-size: 0.9rem;
+                color: $text-light;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            .cookie-settings {
+                background: none;
+                border: none;
+                color: #fff;
+                padding: 0;
+                margin: 0;
+                cursor: pointer;
+                transition: $transition;
+                font-size: 0.9rem;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+
+            a {
+                color: #fff;
+                transition: $transition;
+                
+                &:hover {
+                    color: $primary-color;
+                    transform: translateY(-2px);
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
+// Responsive Styles
+@media (max-width: 991px) {
+    .footer {
+        .footer-widgets {
+            padding: 60px 0 30px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        .footer-widgets {
+            padding: 40px 0 20px;
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+
+            .copyright {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        .company-info {
+            text-align: center;
+
+            .footer-logo {
+                display: inline-block;
+            }
+
+            .contact-btn {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        .widget-title {
+            &:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .footer-widget {
+            text-align: center;
+        }
+
+        .contact-list,
+        .sitemap-links,
+        .services-links {
+            li a:hover {
+                padding-left: 0;
+                transform: translateY(-2px);
+            }
+        }
+    }
+}

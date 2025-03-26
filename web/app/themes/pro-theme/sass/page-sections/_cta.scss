@@ -1,0 +1,116 @@
+.cta-section {
+    padding: 60px 0;
+    position: relative;
+    
+    .cta-wrapper {
+        background-color: #fd7e14;
+        border-radius: 12px;
+        padding: 60px 40px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(253, 126, 20, 0.15);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 1;
+
+        h2 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            color: #fd7e14;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                background-color: #f8f9fa;
+            }
+
+            .btn-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+// Responsive styles
+@media (max-width: 991px) {
+    .cta-section {
+        padding: 40px 0;
+
+        .cta-wrapper {
+            padding: 40px 30px;
+        }
+
+        .cta-content {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .cta-section {
+        padding: 30px 0;
+
+        .cta-wrapper {
+            padding: 30px 20px;
+            border-radius: 8px;
+        }
+
+        .cta-content {
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    }
+}

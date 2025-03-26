@@ -1,0 +1,91 @@
+.site-main {
+  
+  a {
+      color: $tretiary;
+      text-decoration: none;
+      font-weight: 600;
+      &:hover {
+          color: $primary;
+      }
+  }
+
+  p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #617686;
+  }
+
+  ol {
+    padding: 0;
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+#overlay {
+    background: white;
+    position: fixed;
+    padding: 1rem 5% 5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1003;
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      a {
+        width: auto;
+        padding: 0.75rem 0;
+        font-size: 1.25rem;
+        list-style-type: none;
+      }
+    }
+  
+    .close-btn {
+      background-color: transparent;
+      border: none;
+  
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .mobile-call-button {
+    display: none;
+
+    @media (max-width: $sm) {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      padding: 15px;
+      bottom: 0px;
+      width: 100%;
+      background: $secondary;
+      z-index: 1000;
+      text-align: center;
+
+    a {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    i {
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    span {
+      color: azure;
+      margin-right: 5px;
+    }
+    }
+  }

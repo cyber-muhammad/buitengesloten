@@ -1,0 +1,95 @@
+// Variables
+$primary-color: #1a1a1a;
+$text-color: #666666;
+$border-color: #fd7e14;
+$white: #ffffff;
+
+.section-padding {
+    padding: 100px 0;
+    
+    @media (max-width: 991px) {
+        padding: 70px 0;
+    }
+    
+    @media (max-width: 767px) {
+        padding: 50px 0;
+    }
+}
+
+// Service Category Overview Styles
+.service-category-overview {
+    .section-title {
+        margin-bottom: 60px;
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: $primary-color;
+            
+            @media (max-width: 767px) {
+                font-size: 28px;
+            }
+        }
+    
+    }
+
+    .category-card {
+        background-color: $white;
+        box-shadow: 0 4px 80px rgba(8, 15, 30, 0.06);
+        border-radius: 3px;
+        padding: 40px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        min-height: 380px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: $primary-color;
+            margin-bottom: 20px;
+            
+            @media (max-width: 767px) {
+                font-size: 20px;
+            }
+        }
+
+        .category-divider {
+            width: 50px;
+            height: 2px;
+            background: $border-color;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .category-cta {
+            a {
+                display: inline-block;
+                padding: 8px 20px;
+                border: 2px solid $border-color;
+                border-radius: 5px;
+                font-size: 16px;
+                color: $border-color;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: $border-color;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+// Container Modifications
+.container {
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+    }
+}

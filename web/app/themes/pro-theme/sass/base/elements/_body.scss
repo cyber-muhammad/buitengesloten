@@ -1,0 +1,31 @@
+$xl:1200px;
+$lg:992px;
+$md:768px;
+$sm:576px;
+
+
+$primary: #0365a5;
+$secondary: #fd7e14;
+$tretiary: #198754;
+
+$bg-color: #f1f1f1;
+
+$text-color: #2F4F4F;
+$accent-color: #fd7e14;
+
+$font-color:  #2F4F4F;
+
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	color: $text-color;
+	font-family: $font__main;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #1a1a1a;
+	}
+
+	p {
+		font-size: 18px;
+		color: #617686;
+	}
+}

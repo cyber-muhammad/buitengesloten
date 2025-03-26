@@ -1,0 +1,126 @@
+$primary-color: #ff8129;
+$bg-light: #f8f9fa;
+$text-dark: #333;
+$text-muted: #555;
+$shadow-light: rgba(0, 0, 0, 0.05);
+$shadow-hover: rgba(0, 0, 0, 0.1);
+$container-width: 1140px;
+$border-radius: 8px;
+$transition-default: all 0.3s ease;
+
+.contact-cards {
+
+    background: $bg-light;
+
+    // Reset styles
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    // Section styles
+    .section {
+        &-padding {
+            padding: 80px 0;
+        }
+        
+        &-bg {
+            background-color: $bg-light;
+        }
+    }
+
+    // Layout components
+    .container {
+        max-width: $container-width;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    // Column styles
+    .col {
+        &-md-6 {
+            padding: 15px;
+            width: 100%;
+            
+            @media (min-width: 768px) {
+            width: 50%;
+            }
+        }
+        
+        &-xl-4 {
+            padding: 15px;
+            
+            @media (min-width: 1200px) {
+            width: 33.333333%;
+            }
+        }
+    }
+
+    // Contact box styling
+    .single-contact-box {
+        background-color: #fff;
+        padding: 40px 20px;
+        border-radius: $border-radius;
+        box-shadow: 0 5px 20px $shadow-light;
+        height: 100%;
+        transition: $transition-default;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px $shadow-hover;
+        }
+    }
+
+    // Icon styling
+    .icon {
+        $icon-size: 60px;
+        
+        width: $icon-size;
+        height: $icon-size;
+        margin: 0 auto 20px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+    }
+
+    // Contact information styling
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        
+        span {
+            &:first-child {
+            color: $text-muted;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 16px;
+            }
+            
+            &:last-child {
+            color: $text-dark;
+            font-size: 18px;
+            font-weight: 500;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+#masthead {
+
+  font-family: $font__main;
+  background: $primary;
+  color: #fff;
+
+  .contact-buttons {
+
+    @media (max-width: $lg) {
+      display: none;
+    }
+  }
+
+  i {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  a {
+    color: #fff;
+  }
+}
