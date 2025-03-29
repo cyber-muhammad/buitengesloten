@@ -1,0 +1,166 @@
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #ff8129;
+$section-bg-color: #f7f9fc;
+$text-color: #333;
+$link-color: #3498db;
+$link-hover-color: darken($link-color, 15%);
+$container-max-width: 1200px;
+$border-radius: 5px;
+
+// Cities section styling
+.cities-wrapper {
+  background-color: $section-bg-color;
+  padding: 60px 0;
+  
+  &.section-padding {
+    padding: 70px 0;
+  }
+  
+  &.section-bg {
+    position: relative;
+    
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .block-contents {
+    margin-bottom: 40px;
+    
+    .section-title {
+      h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: $primary-color;
+        margin-bottom: 20px;
+        position: relative;
+        
+        &:after {
+          content: "";
+          width: 60px;
+          height: 3px;
+          background-color: $secondary-color;
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      
+      &.wow {
+        animation-duration: 1s;
+      }
+    }
+  }
+  
+  .data-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    .data-col {
+      flex: 0 0 20%;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      position: relative;
+      
+      @media (max-width: 1200px) {
+        flex: 0 0 25%;
+      }
+      
+      @media (max-width: 992px) {
+        flex: 0 0 33.333%;
+      }
+      
+      @media (max-width: 768px) {
+        flex: 0 0 50%;
+      }
+      
+      @media (max-width: 480px) {
+        flex: 0 0 100%;
+      }
+      
+      a {
+        color: $link-color;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-block;
+        position: relative;
+        padding-left: 5px;
+        
+        &:hover {
+          color: $link-hover-color;
+          transform: translateX(2px);
+        }
+      }
+    }
+  }
+  
+  // Column offsets for responsive design
+  .offset-xl-3 {
+    @media (min-width: 1200px) {
+      margin-left: 25%;
+    }
+  }
+  
+  .offset-lg-2 {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      margin-left: 16.666%;
+    }
+  }
+  
+  .col-lg-8 {
+    @media (min-width: 992px) {
+      width: 66.666%;
+    }
+  }
+  
+  .col-xl-6 {
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
+  }
+  
+  .col-12 {
+    width: 100%;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+}
+
+// Animation keyframes for fadeInUp
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}

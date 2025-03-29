@@ -473,3 +473,159 @@ function register_contact_cards_acf_fields() {
     }
 }
 add_action('acf/init', 'register_contact_cards_acf_fields');
+
+/**
+ * Register ACF fields for locations/cities section
+ */
+function register_locations_acf_fields() {
+    if (function_exists('acf_add_local_field_group')) {
+        // Cities section with textarea field for easy entry
+        acf_add_local_field_group(array(
+            'key' => 'group_locations_settings',
+            'title' => 'Locations Settings',
+            'fields' => array(
+                array(
+                    'key' => 'field_enable_locations_section',
+                    'label' => 'Enable Locations Section',
+                    'name' => 'enable_locations_section',
+                    'type' => 'true_false',
+                    'instructions' => 'Enable to display the locations/cities section on this page.',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 1,
+                    'ui_on_text' => 'Yes',
+                    'ui_off_text' => 'No',
+                ),
+                array(
+                    'key' => 'field_locations_section_title',
+                    'label' => 'Section Title',
+                    'name' => 'locations_section_title',
+                    'type' => 'text',
+                    'instructions' => 'Enter the title for the locations section.',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_enable_locations_section',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => 'Onze Locaties in de Provincie',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_province_name',
+                    'label' => 'Province Name',
+                    'name' => 'province_name',
+                    'type' => 'text',
+                    'instructions' => 'Enter the province name to display in the title.',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_enable_locations_section',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => 'Antwerpen',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_cities_list',
+                    'label' => 'Cities',
+                    'name' => 'cities_list',
+                    'type' => 'textarea',
+                    'instructions' => 'Enter city links in the format: City Name|url, one per line. Example: Antwerpen|../slotenmaker-antwerpen.html',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_enable_locations_section',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => 'City Name|../slotenmaker-city.html
+Another City|../slotenmaker-another-city.html',
+                    'maxlength' => '',
+                    'rows' => 10,
+                    'new_lines' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'page',
+                    ),
+                ),
+            ),
+            'menu_order' => 10,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+            'show_in_rest' => 0,
+        ));
+    }
+}
+add_action('acf/init', 'register_locations_acf_fields');
+
+/**
+ * Display the cities section
+ * 
+ * This function can be called in any page template to display the cities section
+ */
+function display_cities_section() {
+    get_template_part('template-parts/template-cities-acf');
+}
+
+/**
+ * Shortcode to display the cities section anywhere
+ * 
+ * Usage: [cities_section]
+ */
+function cities_section_shortcode($atts) {
+    ob_start();
+    display_cities_section();
+    return ob_get_clean();
+}
+add_shortcode('cities_section', 'cities_section_shortcode');

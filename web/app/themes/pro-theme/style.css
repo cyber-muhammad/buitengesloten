@@ -1870,6 +1870,165 @@ textarea {
 	font-weight: 500;
 }
 
+.cities-wrapper {
+	background-color: #f7f9fc;
+	padding: 60px 0;
+}
+
+.cities-wrapper.section-padding {
+	padding: 70px 0;
+}
+
+.cities-wrapper.section-bg {
+	position: relative;
+}
+
+.cities-wrapper.section-bg:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cities-wrapper .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.cities-wrapper .block-contents {
+	margin-bottom: 40px;
+}
+
+.cities-wrapper .block-contents .section-title h2 {
+	font-size: 32px;
+	font-weight: 700;
+	color: #2c3e50;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.cities-wrapper .block-contents .section-title h2:after {
+	content: "";
+	width: 60px;
+	height: 3px;
+	background-color: #ff8129;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.cities-wrapper .block-contents .section-title.wow {
+	animation-duration: 1s;
+}
+
+.cities-wrapper .data-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cities-wrapper .data-row .data-col {
+	flex: 0 0 20%;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+@media (max-width: 1200px) {
+	.cities-wrapper .data-row .data-col {
+		flex: 0 0 25%;
+	}
+}
+
+@media (max-width: 992px) {
+	.cities-wrapper .data-row .data-col {
+		flex: 0 0 33.333%;
+	}
+}
+
+@media (max-width: 768px) {
+	.cities-wrapper .data-row .data-col {
+		flex: 0 0 50%;
+	}
+}
+
+@media (max-width: 480px) {
+	.cities-wrapper .data-row .data-col {
+		flex: 0 0 100%;
+	}
+}
+
+.cities-wrapper .data-row .data-col a {
+	color: #3498db;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	display: inline-block;
+	position: relative;
+	padding-left: 5px;
+}
+
+.cities-wrapper .data-row .data-col a:hover {
+	color: #1d6fa5;
+	transform: translateX(2px);
+}
+
+@media (min-width: 1200px) {
+	.cities-wrapper .offset-xl-3 {
+		margin-left: 25%;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.cities-wrapper .offset-lg-2 {
+		margin-left: 16.666%;
+	}
+}
+
+@media (min-width: 992px) {
+	.cities-wrapper .col-lg-8 {
+		width: 66.666%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cities-wrapper .col-xl-6 {
+		width: 50%;
+	}
+}
+
+.cities-wrapper .col-12 {
+	width: 100%;
+}
+
+.cities-wrapper .text-center {
+	text-align: center;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 40px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeInUp {
+	animation-name: fadeInUp;
+}
+
 #contact {
 	padding: 20px 0;
 }
