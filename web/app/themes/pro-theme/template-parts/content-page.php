@@ -42,8 +42,8 @@
 		//     $display_contact_cards = true;
 		// }
 		
-		// Display the content with or without contact cards
-		if ($display_contact_cards && $total_paragraphs >= 2) {
+		// Display the content with full-width sections after 2nd paragraph
+		if ($total_paragraphs >= 2) {
 			// Output first 2 paragraphs
 			for ($i = 0; $i < 2; $i++) {
 				echo $paragraphs[$i] . '</p>';
@@ -52,8 +52,13 @@
 			// Close the current containers to allow full width section
 			echo '</div></article></div></div></div></main>';
 			
-			// Insert contact cards
-			get_template_part('global-parts/contact-cards');
+			// Insert cities ACF section if it exists
+			get_template_part('template-parts/template-cities-acf');
+			
+			// Insert contact cards if needed
+			if ($display_contact_cards) {
+				get_template_part('global-parts/contact-cards');
+			}
 			
 			// Reopen the containers
 			$post_classes = get_post_class('', get_the_ID());
@@ -65,7 +70,7 @@
 				echo $paragraphs[$i] . ($i < $total_paragraphs - 1 ? '</p>' : '');
 			}
 		} else {
-			// Not enough paragraphs or should not display contact cards, just output the content
+			// Not enough paragraphs, just output the content
 			echo $content;
 		}
 		

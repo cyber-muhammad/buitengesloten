@@ -1873,6 +1873,7 @@ textarea {
 .cities-wrapper {
 	background-color: #f7f9fc;
 	padding: 60px 0;
+	margin: 60px 0;
 }
 
 .cities-wrapper.section-padding {

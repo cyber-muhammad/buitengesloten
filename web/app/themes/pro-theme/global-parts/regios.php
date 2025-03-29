@@ -12,7 +12,7 @@
                 <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                     <div class="region-header">
                         <div class="region-name">
-                            <a href="provincie/antwerpen.html">
+                            <a href="/provincie-antwerpen/">
                                 <span>Provincie</span>
                                 <h3>Antwerpen</h3>
                             </a>
@@ -20,15 +20,15 @@
                     </div>
                     <div class="region-info">
                         <ul>
-                            <li><a href="regios/antwerpen/slotenmaker/antwerpen.html">Antwerpen</a></li>
-                            <li><a href="regios/antwerpen/slotenmaker/brasschaat.html">Brasschaat</a></li>
-                            <li><a href="regios/antwerpen/slotenmaker/mechelen.html">Mechelen</a></li>
-                            <li><a href="regios/antwerpen/slotenmaker/turnhout.html">Turnhout</a></li>
-                            <li><a href="regios/antwerpen/slotenmaker/zoersel.html">Zoersel</a></li>
+                            <li><a href="/slotenmaker-antwerpen/">Antwerpen</a></li>
+                            <li><a href="/slotenmaker-brasschaat/">Brasschaat</a></li>
+                            <li><a href="/slotenmaker-mechelen/">Mechelen</a></li>
+                            <li><a href="/slotenmaker-turnhout/">Turnhout</a></li>
+                            <li><a href="/slotenmaker-zoersel/">Zoersel</a></li>
                         </ul>
                     </div>
                     <div class="region-action">
-                        <div class="read-more"><a href="provincie/antwerpen.html">Lees meer</a></div>
+                        <div class="read-more"><a href="/provincie-antwerpen/">Lees meer</a></div>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                     <div class="region-header">
                         <div class="region-name">
-                            <a href="provincie/vlaams-brabant.html">
+                            <a href="/provincie-vlaams-brabant/">
                                 <span>Provincie</span>
                                 <h3>Vlaams-Brabant</h3>
                             </a>
@@ -44,15 +44,15 @@
                     </div>
                     <div class="region-info">
                         <ul>
-                            <li><a href="regios/vlaams-brabant/slotenmaker/aarschot.html">Aarschot</a></li>
-                            <li><a href="regios/vlaams-brabant/slotenmaker/diest.html">Diest</a></li>
-                            <li><a href="regios/vlaams-brabant/slotenmaker/halle.html">Halle</a></li>
-                            <li><a href="regios/vlaams-brabant/slotenmaker/leuven.html">Leuven</a></li>
-                            <li><a href="regios/vlaams-brabant/slotenmaker/vilvoorde.html">Vilvoorde</a></li>
+                            <li><a href="/slotenmaker-aarschot/">Aarschot</a></li>
+                            <li><a href="/slotenmaker-diest/">Diest</a></li>
+                            <li><a href="/slotenmaker-halle/">Halle</a></li>
+                            <li><a href="/slotenmaker-leuven/">Leuven</a></li>
+                            <li><a href="/slotenmaker-vilvoorde/">Vilvoorde</a></li>
                         </ul>
                     </div>
                     <div class="region-action">
-                        <div class="read-more"><a href="provincie/vlaams-brabant.html">Lees meer</a></div>
+                        <div class="read-more"><a href="/provincie-vlaams-brabant/">Lees meer</a></div>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                     <div class="region-header">
                         <div class="region-name">
-                            <a href="provincie/west-vlaanderen.html">
+                            <a href="/provincie-west-vlaanderen/">
                                 <span>Provincie</span>
                                 <h3>West-Vlaanderen</h3>
                             </a>
@@ -68,11 +68,11 @@
                     </div>
                     <div class="region-info">
                         <ul>
-                            <li><a href="regios/west-vlaanderen/slotenmaker/brugge.html">Brugge</a></li>
-                            <li><a href="regios/west-vlaanderen/slotenmaker/knokke-heist.html">Knokke-Heist</a></li>
-                            <li><a href="regios/west-vlaanderen/slotenmaker/kortrijk.html">Kortrijk</a></li>
-                            <li><a href="regios/west-vlaanderen/slotenmaker/oostende.html">Oostende</a></li>
-                            <li><a href="regios/west-vlaanderen/slotenmaker/roeselare.html">Roeselare</a></li>
+                            <li><a href="/slotenmaker-brugge/">Brugge</a></li>
+                            <li><a href="/slotenmaker-knokke-heist/">Knokke-Heist</a></li>
+                            <li><a href="/slotenmaker-kortrijk/">Kortrijk</a></li>
+                            <li><a href="/slotenmaker-oostende/">Oostende</a></li>
+                            <li><a href="/slotenmaker-roeselare/">Roeselare</a></li>
                         </ul>
                     </div>
                     <div class="region-action">
@@ -84,7 +84,7 @@
                 <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
                     <div class="region-header">
                         <div class="region-name">
-                            <a href="provincie/limburg.html">
+                            <a href="/provincie-limburg/">
                                 <span>Provincie</span>
                                 <h3>Limburg</h3>
                             </a>
@@ -92,15 +92,15 @@
                     </div>
                     <div class="region-info">
                         <ul>
-                            <li><a href="regios/limburg/slotenmaker/beringen.html">Beringen</a></li>
-                            <li><a href="regios/limburg/slotenmaker/genk.html">Genk</a></li>
-                            <li><a href="regios/limburg/slotenmaker/hasselt.html">Hasselt</a></li>
-                            <li><a href="regios/limburg/slotenmaker/lommel.html">Lommel</a></li>
-                            <li><a href="regios/limburg/slotenmaker/sint-truiden.html">Sint-Truiden</a></li>
+                            <li><a href="/slotenmaker-beringen/">Beringen</a></li>
+                            <li><a href="/slotenmaker-genk/">Genk</a></li>
+                            <li><a href="/slotenmaker-hasselt/">Hasselt</a></li>
+                            <li><a href="/slotenmaker-lommel/">Lommel</a></li>
+                            <li><a href="/slotenmaker-sint-truiden/">Sint-Truiden</a></li>
                         </ul>
                     </div>
                     <div class="region-action">
-                        <div class="read-more"><a href="provincie/limburg.html">Lees meer</a></div>
+                        <div class="read-more"><a href="/provincie-limburg/">Lees meer</a></div>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                     <div class="region-header">
                         <div class="region-name">
-                            <a href="provincie/oost-vlaanderen.html">
+                            <a href="/provincie-oost-vlaanderen/">
                                 <span>Provincie</span>
                                 <h3>Oost-Vlaanderen</h3>
                             </a>
@@ -116,15 +116,15 @@
                     </div>
                     <div class="region-info">
                         <ul>
-                            <li><a href="regios/oost-vlaanderen/slotenmaker/aalst.html">Aalst</a></li>
-                            <li><a href="regios/oost-vlaanderen/slotenmaker/dendermonde.html">Dendermonde</a></li>
-                            <li><a href="regios/oost-vlaanderen/slotenmaker/gent.html">Gent</a></li>
-                            <li><a href="regios/oost-vlaanderen/slotenmaker/oudenaarde.html">Oudenaarde</a></li>
-                            <li><a href="regios/oost-vlaanderen/slotenmaker/sint-niklaas.html">Sint-Niklaas</a></li>
+                            <li><a href="/slotenmaker-aalst/">Aalst</a></li>
+                            <li><a href="/slotenmaker-dendermonde/">Dendermonde</a></li>
+                            <li><a href="/slotenmaker-gent/">Gent</a></li>
+                            <li><a href="/slotenmaker-oudenaarde/">Oudenaarde</a></li>
+                            <li><a href="/slotenmaker-sint-niklaas/">Sint-Niklaas</a></li>
                         </ul>
                     </div>
                     <div class="region-action">
-                        <div class="read-more"><a href="provincie/oost-vlaanderen.html">Lees meer</a></div>
+                        <div class="read-more"><a href="/provincie-oost-vlaanderen/">Lees meer</a></div>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@
                 <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                     <div class="region-header">
                         <div class="region-name">
-                            <a href="provincie/brussel.html">
+                            <a href="/provincie-brussel/">
                                 <span>Provincie</span>
                                 <h3>Brussel</h3>
                             </a>
@@ -140,15 +140,15 @@
                     </div>
                     <div class="region-info">
                         <ul>
-                            <li><a href="regios/brussel/slotenmaker/anderlecht.html">Anderlecht</a></li>
-                            <li><a href="regios/brussel/slotenmaker/brussel.html">Brussel</a></li>
-                            <li><a href="regios/brussel/slotenmaker/jette.html">Jette</a></li>
-                            <li><a href="regios/brussel/slotenmaker/koekelberg.html">Koekelberg</a></li>
-                            <li><a href="regios/brussel/slotenmaker/schaarbeek.html">Schaarbeek</a></li>
+                            <li><a href="/slotenmaker-anderlecht/">Anderlecht</a></li>
+                            <li><a href="/slotenmaker-brussel/">Brussel</a></li>
+                            <li><a href="/slotenmaker-jette/">Jette</a></li>
+                            <li><a href="/slotenmaker-koekelberg/">Koekelberg</a></li>
+                            <li><a href="/slotenmaker-schaarbeek/">Schaarbeek</a></li>
                         </ul>
                     </div>
                     <div class="region-action">
-                        <div class="read-more"><a href="provincie/brussel.html">Lees meer</a></div>
+                        <div class="read-more"><a href="/provincie-brussel/">Lees meer</a></div>
                     </div>
                 </div>
             </div>
