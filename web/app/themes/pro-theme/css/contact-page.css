@@ -1,0 +1,274 @@
+/* Contact Page Custom Styles */
+
+/* Contact Info Boxes */
+.single-contact-box {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.single-contact-box.box1 {
+    border-top: 4px solid #1A76D1;
+}
+
+.single-contact-box.box2 {
+    border-top: 4px solid #28a745;
+}
+
+.single-contact-box.box3 {
+    border-top: 4px solid #ffc107;
+}
+
+.single-contact-box .icon {
+    margin-bottom: 20px;
+}
+
+.single-contact-box .contact-info span:first-child {
+    display: block;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.single-contact-box .contact-info span:last-child {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* Contact Form 7 Custom Styles */
+.wpcf7-form input[type="text"], 
+.wpcf7-form input[type="email"], 
+.wpcf7-form input[type="tel"], 
+.wpcf7-form select,
+.wpcf7-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.wpcf7-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Simple red border for invalid fields - hide validation text */
+.wpcf7-form .wpcf7-not-valid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 1px #dc3545;
+}
+
+/* Hide validation messages */
+.wpcf7-form .wpcf7-not-valid-tip {
+    display: none;
+}
+
+.wpcf7-form .wpcf7-submit {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    background-color: #1A76D1;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #1A76D1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.wpcf7-form .wpcf7-submit:hover {
+    background-color: #0c5baa;
+    border-color: #0c5baa;
+}
+
+.wpcf7-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Style response message containers */
+.wpcf7-form .wpcf7-response-output {
+    margin: 20px 0 0;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.wpcf7-form .wpcf7-validation-errors,
+.wpcf7-form .wpcf7-spam-blocked {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+}
+
+.wpcf7-form .wpcf7-mail-sent-ok {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Custom styling for checkbox and radio inputs */
+.wpcf7-form .wpcf7-checkbox .wpcf7-list-item,
+.wpcf7-form .wpcf7-radio .wpcf7-list-item {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.wpcf7-form .wpcf7-checkbox input,
+.wpcf7-form .wpcf7-radio input {
+    margin-right: 5px;
+}
+
+/* Style for required field indicator */
+.wpcf7-form .required {
+    color: #dc3545;
+}
+
+/* Page Banner */
+.page-banner-wrap {
+    position: relative;
+    background-color: #0A3D70; 
+    padding: 100px 0; 
+    background-size: cover; 
+    background-position: center center;
+    color: white;
+}
+
+.page-banner-wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: 0;
+}
+
+.page-banner-wrap .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-banner-wrap h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.page-banner-wrap p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.page-banner-shape {
+    position: absolute;
+    right: 5%;
+    bottom: -10%;
+    opacity: 0.15;
+    max-width: 350px;
+    z-index: 0;
+}
+
+/* Contact Section Wrapper */
+.contact-us-wrapper {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+/* Section Title */
+.contact-us-wrapper .section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-us-wrapper .section-title p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Google Map */
+.google-map {
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.google-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border: 1px solid #e5e5e5;
+}
+
+/* Form Error States */
+.form-error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 1px #dc3545 !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 991px) {
+    .page-banner-wrap {
+        padding: 70px 0;
+    }
+    .page-banner-wrap h1 {
+        font-size: 36px;
+    }
+    .contact-us-wrapper {
+        padding: 70px 0;
+    }
+    .google-map {
+        height: 350px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-banner-wrap {
+        padding: 50px 0;
+    }
+    .page-banner-wrap h1 {
+        font-size: 30px;
+    }
+    .contact-us-wrapper {
+        padding: 50px 0;
+    }
+    .contact-us-wrapper .section-title h2 {
+        font-size: 28px;
+    }
+}

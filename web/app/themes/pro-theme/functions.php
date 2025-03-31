@@ -181,6 +181,11 @@ function derass_register_styles()
 {
     wp_enqueue_style('fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css", array(), '6.1.1', 'all');
 	wp_enqueue_style('bootstrap5', "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css", array(), '5.2.0', 'all');
+	
+	// Add contact page CSS only on contact page template
+	if (is_page_template('page-templates/contact-page.php')) {
+	    wp_enqueue_style('contact-page', get_template_directory_uri() . '/css/contact-page.css', array(), '1.0.0', 'all');
+	}
 }
 
 add_action('wp_enqueue_scripts', 'derass_register_styles');
@@ -189,9 +194,48 @@ function derass_register_scripts()
 {
 	wp_enqueue_script('app-js', get_stylesheet_directory_uri() . '/js/app.js', array(), null, true);
     wp_enqueue_script('bootstrap', "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js", array(), '5.2.0', true);
+    
+    // Add Contact Page specific script only on contact page template
+    if (is_page_template('page-templates/contact-page.php')) {
+        wp_enqueue_script('contact-page-js', get_template_directory_uri() . '/js/contact-page.js', array('jquery'), null, true);
+    }
+}
+
+// Add custom Contact Form 7 validation handling
+function custom_wpcf7_config() {
+    if (is_page_template('page-templates/contact-page.php')) {
+        ?>
+        <script>
+            // Customize Contact Form 7 validation
+            if (typeof wpcf7 !== 'undefined') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Hide all validation messages by default
+                    var style = document.createElement('style');
+                    style.innerHTML = '.wpcf7-not-valid-tip { display: none !important; }';
+                    document.head.appendChild(style);
+                    
+                    // Prevent default CF7 messages from showing
+                    if (wpcf7 && typeof wpcf7.init === 'function') {
+                        var oldInit = wpcf7.init;
+                        wpcf7.init = function() {
+                            oldInit.apply(this, arguments);
+                            
+                            document.querySelectorAll('.wpcf7-form').forEach(function(form) {
+                                form.addEventListener('wpcf7invalid', function(e) {
+                                    // This is handled by our custom script in contact-page.js
+                                });
+                            });
+                        };
+                    }
+                });
+            }
+        </script>
+        <?php
+    }
 }
 
 add_action('wp_enqueue_scripts', 'derass_register_scripts');
+add_action('wp_footer', 'custom_wpcf7_config', 20);
 
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
@@ -629,3 +673,98 @@ function cities_section_shortcode($atts) {
     return ob_get_clean();
 }
 add_shortcode('cities_section', 'cities_section_shortcode');
+
+
+/**
+ * ACF Field Configuration for Contact Page
+ * This code should be added to functions.php or a custom plugin file
+ */
+
+if (function_exists('acf_add_local_field_group')) {
+    
+    acf_add_local_field_group(array(
+        'key' => 'group_contact_page',
+        'title' => 'Contact Page Settings',
+        'fields' => array(
+            array(
+                'key' => 'field_page_subtitle',
+                'label' => 'Page Subtitle',
+                'name' => 'page_subtitle',
+                'type' => 'textarea',
+                'instructions' => 'Enter the subtitle text that appears below the page title',
+                'required' => 0,
+                'default_value' => 'Op zoek naar een oplossing voor toegangscontrole? Dan ben je bij Slotenmaker aan het juiste adres. Wij voorzien deuren en poorten van elektronische sloten in combinatie met een geavanceerde toegangscontrole op basis van een badgesysteem, codeklavier of vingerscanner.',
+            ),
+            array(
+                'key' => 'field_phone_number',
+                'label' => 'Phone Number',
+                'name' => 'phone_number',
+                'type' => 'text',
+                'instructions' => 'Enter your contact phone number',
+                'required' => 1,
+                'default_value' => '0493/08 93 59',
+            ),
+            array(
+                'key' => 'field_email_address',
+                'label' => 'Email Address',
+                'name' => 'email_address',
+                'type' => 'email',
+                'instructions' => 'Enter your contact email address',
+                'required' => 1,
+                'default_value' => 'info@slotenmakermathias.be',
+            ),
+            array(
+                'key' => 'field_opening_hours',
+                'label' => 'Opening Hours',
+                'name' => 'opening_hours',
+                'type' => 'text',
+                'instructions' => 'Enter your business opening hours',
+                'required' => 0,
+                'default_value' => '24/7',
+            ),
+            array(
+                'key' => 'field_contact_description',
+                'label' => 'Contact Description',
+                'name' => 'contact_description',
+                'type' => 'textarea',
+                'instructions' => 'Enter a brief description for the contact section',
+                'required' => 0,
+                'default_value' => 'Contacteer Slotenmaker. 24/7 spoedservice voor interventies en herstellingen. Wij plaatsten veiligheidscilinders, sloten en meer.',
+            ),
+            array(
+                'key' => 'field_google_map_embed',
+                'label' => 'Google Map Embed',
+                'name' => 'google_map_embed',
+                'type' => 'textarea',
+                'instructions' => 'Paste the Google Maps embed code here',
+                'required' => 0,
+            ),
+            array(
+                'key' => 'field_contact_form_id',
+                'label' => 'Contact Form ID',
+                'name' => 'contact_form_id',
+                'type' => 'text',
+                'instructions' => 'Enter the Contact Form 7 ID',
+                'required' => 0,
+                'default_value' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-templates/contact-page.php',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => 1,
+        'description' => 'Settings for the Contact page template',
+    ));
+}
