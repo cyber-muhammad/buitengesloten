@@ -197,42 +197,10 @@ function derass_register_scripts()
     
     // Add Contact Page specific script only on contact page template
     if (is_page_template('page-templates/contact-page.php')) {
-        wp_enqueue_script('contact-page-js', get_template_directory_uri() . '/js/contact-page.js', array('jquery'), null, true);
+        wp_enqueue_script('contact-page-js', get_template_directory_uri() . '/js/contact-page.js', array(), null, true);
     }
 }
 
-// Add custom Contact Form 7 validation handling
-function custom_wpcf7_config() {
-    if (is_page_template('page-templates/contact-page.php')) {
-        ?>
-        <script>
-            // Customize Contact Form 7 validation
-            if (typeof wpcf7 !== 'undefined') {
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Hide all validation messages by default
-                    var style = document.createElement('style');
-                    style.innerHTML = '.wpcf7-not-valid-tip { display: none !important; }';
-                    document.head.appendChild(style);
-                    
-                    // Prevent default CF7 messages from showing
-                    if (wpcf7 && typeof wpcf7.init === 'function') {
-                        var oldInit = wpcf7.init;
-                        wpcf7.init = function() {
-                            oldInit.apply(this, arguments);
-                            
-                            document.querySelectorAll('.wpcf7-form').forEach(function(form) {
-                                form.addEventListener('wpcf7invalid', function(e) {
-                                    // This is handled by our custom script in contact-page.js
-                                });
-                            });
-                        };
-                    }
-                });
-            }
-        </script>
-        <?php
-    }
-}
 
 add_action('wp_enqueue_scripts', 'derass_register_scripts');
 add_action('wp_footer', 'custom_wpcf7_config', 20);
