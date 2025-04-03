@@ -262,9 +262,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Handle successful form submission
             document.addEventListener('wpcf7mailsent', function(event) {
-                if (event.detail.contactFormId === cf7Form.querySelector('input[name="_wpcf7"]').value) {
-                    // Get the form container
-                    const formContainer = cf7Form.closest('.contact-form');
+                // Check if this is the right form
+                const formId = cf7Form.querySelector('input[name="_wpcf7"]').value;
+                if (event.detail.contactFormId === formId) {
+                    console.log('Form success detected!'); // Debug log
+                    
+                    // Get the form container - try different selectors to find the right parent
+                    let formContainer = cf7Form.closest('.contact-form');
+                    if (!formContainer) {
+                        formContainer = cf7Form.parentElement;
+                        console.log('Using parent element as container'); // Debug log
+                    }
                     
                     // Create success message container
                     const successContainer = document.createElement('div');
@@ -280,27 +288,47 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>We hebben uw aanvraag ontvangen en nemen zo spoedig mogelijk contact met u op.</p>
                     `;
                     
-                    // First fade out the form
-                    formContainer.style.transition = 'opacity 0.5s ease';
-                    formContainer.style.opacity = '0';
-                    
-                    // After the fade-out animation completes, replace with success message
-                    setTimeout(() => {
-                        // Clear the form container but keep it for dimensions
-                        while (formContainer.firstChild) {
-                            formContainer.removeChild(formContainer.firstChild);
-                        }
+                    // If we want to animate the transition
+                    if (formContainer) {
+                        console.log('Animating transition'); // Debug log
                         
-                        // Add the success message
-                        formContainer.appendChild(successContainer);
+                        // Store the form height before we clear it
+                        const formHeight = formContainer.offsetHeight;
                         
-                        // Fade in the success message
+                        // First fade out the form
+                        formContainer.style.transition = 'opacity 0.5s ease';
                         formContainer.style.opacity = '0';
-                        setTimeout(() => {
-                            formContainer.style.opacity = '1';
-                        }, 50); // Small delay to ensure the opacity transition works
                         
-                    }, 500); // Wait for fade-out to complete
+                        // After the fade-out animation completes, replace with success message
+                        setTimeout(() => {
+                            // Set a min-height to preserve space
+                            formContainer.style.minHeight = formHeight + 'px';
+                            
+                            // Clear the form container but keep it for dimensions
+                            formContainer.innerHTML = '';
+                            
+                            // Add the success message
+                            formContainer.appendChild(successContainer);
+                            
+                            // Fade in the success message
+                            formContainer.style.opacity = '0';
+                            setTimeout(() => {
+                                formContainer.style.opacity = '1';
+                            }, 50); // Small delay to ensure the opacity transition works
+                            
+                        }, 500); // Wait for fade-out to complete
+                    } else {
+                        // If we can't find a good container, replace the form directly
+                        console.log('Direct replacement'); // Debug log
+                        
+                        // Create a wrapper to replace the form
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'contact-form';
+                        wrapper.appendChild(successContainer);
+                        
+                        // Replace the form with our wrapper
+                        cf7Form.parentNode.replaceChild(wrapper, cf7Form);
+                    }
                     
                     // Reset form state (but not visible to user)
                     cf7Form.reset();
@@ -313,6 +341,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+            
+            // Also check if form already has sent status on page load
+            if (cf7Form.dataset.status === 'sent') {
+                console.log('Form already sent on page load'); // Debug log
+                
+                // Trigger the same success flow manually
+                const event = new CustomEvent('wpcf7mailsent', {
+                    detail: {
+                        contactFormId: cf7Form.querySelector('input[name="_wpcf7"]').value
+                    }
+                });
+                document.dispatchEvent(event);
+            }
         }
     }
 

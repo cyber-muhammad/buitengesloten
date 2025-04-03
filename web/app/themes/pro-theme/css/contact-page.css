@@ -119,9 +119,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
     min-height: 300px;
-    animation: fadeInUp 0.8s ease forwards;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .form-success-message .success-icon {
@@ -146,10 +149,21 @@
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 0;
-    max-width: 80%;
+    max-width: 90%;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.5s ease 0.7s forwards;
+}
+
+/* Alternative approach for success message transition */
+.contact-form {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contact-form.success-state {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Error Message Styling */
