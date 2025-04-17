@@ -3638,19 +3638,45 @@ textarea {
 }
 
 #overlay {
-	background: white;
+	background: #0365a5;
 	position: fixed;
 	padding: 1rem 5% 5rem;
 	top: 0;
-	left: 0;
+	left: -100%;
+	/* Start off-screen to the left */
 	width: 100%;
 	height: 100%;
 	z-index: 1003;
+	transition: left 0.3s ease-in-out;
+	/* Add slide transition */
+	opacity: 0;
+	/* Start transparent */
+	visibility: hidden;
+	/* Hide initially */
+}
+
+#overlay.active {
+	left: 0;
+	/* Slide in from the left */
+	opacity: 1;
+	visibility: visible;
 }
 
 #overlay ul {
 	list-style-type: none;
 	padding: 0;
+	opacity: 0;
+	/* Start with hidden menu items */
+	transform: translateX(-20px);
+	/* Slightly offset to create staggered animation */
+	transition: opacity 0.4s ease, transform 0.4s ease;
+	transition-delay: 0.2s;
+	/* Delay to make items appear after overlay slides in */
+}
+
+#overlay ul.active {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 #overlay ul a {
@@ -3658,11 +3684,30 @@ textarea {
 	padding: 0.75rem 0;
 	font-size: 1.25rem;
 	list-style-type: none;
+	color: white;
+	/* Make links white for better visibility */
+	display: block;
+	transition: transform 0.2s ease;
+}
+
+#overlay ul a:hover {
+	transform: translateX(5px);
+	/* Slight movement on hover */
+	color: #fd7e14;
+	/* Use the same orange accent color used elsewhere */
 }
 
 #overlay .close-btn {
 	background-color: transparent;
 	border: none;
+	color: white;
+	cursor: pointer;
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#overlay .close-btn:hover {
+	transform: rotate(90deg);
+	color: #fd7e14;
 }
 
 #overlay .close-btn i {

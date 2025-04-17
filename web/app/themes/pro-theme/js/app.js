@@ -1,30 +1,43 @@
-document.getElementById('burger-menu').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'block';
-});
-
-document.getElementById('close-menu').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-});
-
-function triggerCallClick(element) {
-    const link = element.querySelector('a');
-    if (link) {
-        link.click();
-    }
-}
-
-function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-11307781035/49y4CNP_89UYEKuX_I8q',
-        'event_callback': callback
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    const burgerMenu = document.getElementById('burger-menu');
+    const overlay = document.getElementById('overlay');
+    const closeMenu = document.getElementById('close-menu');
+    const menuList = overlay.querySelector('.menu-nav');
+    
+    // Open menu with animation
+    burgerMenu.addEventListener('click', function() {
+        // First make it visible but with initial animation state
+        overlay.style.visibility = 'visible';
+        
+        // Trigger the slide-in animation
+        setTimeout(function() {
+            overlay.classList.add('active');
+            
+            // Animate menu items after overlay slides in
+            setTimeout(function() {
+                menuList.classList.add('active');
+            }, 200);
+        }, 10); // Small delay to ensure the transition works
     });
-    return false;
-}
+    
+    // Close menu with animation
+    closeMenu.addEventListener('click', function() {
+        // First animate menu items out
+        menuList.classList.remove('active');
+        
+        // Then animate overlay out
+        setTimeout(function() {
+            overlay.classList.remove('active');
+            
+            // Hide overlay after animation completes
+            setTimeout(function() {
+                overlay.style.visibility = 'hidden';
+            }, 300); // Match transition duration
+        }, 150);
+    });
+});
+
 
 function toggleProvinceContent(provinceId) {
     const content = document.getElementById('content-' + provinceId);

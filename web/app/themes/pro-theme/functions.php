@@ -203,6 +203,30 @@ function derass_register_scripts()
 
 
 add_action('wp_enqueue_scripts', 'derass_register_scripts');
+/**
+ * Contact Form 7 configuration script
+ */
+function custom_wpcf7_config() {
+    // Only add this script if Contact Form 7 is active
+    if (function_exists('wpcf7_enqueue_scripts')) {
+        ?>
+        <script>
+            document.addEventListener('wpcf7submit', function(event) {
+                if (event.detail.status === 'mail_sent') {
+                    // Track form submission in Google Analytics if available
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'form_submission', {
+                            'event_category': 'Contact Form',
+                            'event_action': 'submit',
+                            'event_label': event.detail.contactFormId
+                        });
+                    }
+                }
+            }, false);
+        </script>
+        <?php
+    }
+}
 add_action('wp_footer', 'custom_wpcf7_config', 20);
 
 function register_navwalker(){

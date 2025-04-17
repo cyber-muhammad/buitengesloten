@@ -33,28 +33,22 @@
         <a class="skip-link screen-reader-text"
             href="#primary"><?php esc_html_e( 'Skip to content', 'theme-pro' ); ?></a>
 
-        <header id="masthead" class="site-header">
+            <header id="masthead" class="site-header">
             <?php get_template_part( 'global-templates/topbar'); ?>
             <section id="navigation">
-                <div class="container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-lg-2">
-                            <div class="site-branding">
-                                <a href="/" class="d-flex align-items-center">
-                                    <img src="<?php echo esc_url($brandLink['url']); ?>" width="180" height="90"
-                                        class="mx-3" alt="<?php echo esc_attr($brandLink['alt']); ?>"></a>
-                            </div><!-- .site-branding -->
-                        </div>
-                        <div class="col-lg-10 text-end p-lg-0 d-none d-lg-flex justify-content-end align-items-center">
-                            <?php get_template_part( 'global-parts/navbar'); ?>
-                            <div class="mobile-menu d-flex justify-content-between">
-                                <a id="burger-menu" class="burger"></a>
-                            </div>
-                            <div
-                                class="request-button cta-btn-container d-none d-lg-block text-center d-flex align-items-center justify-content-center">
-                                <a class="button-primary align-middle" href="/contact/">Gratis Offerte</a>
-                            </div>
-                        </div>
+                <div class="container d-flex align-items-center justify-content-between p-2">
+                    <div class="site-branding">
+                        <a href="/" class="d-flex align-items-center">
+                            <img src="<?php echo esc_url($brandLink['url']); ?>" width="180" height="90" class="mx-3"
+                                alt="<?php echo esc_attr($brandLink['alt']); ?>"></a>
+                    </div><!-- .site-branding -->
+                    <?php get_template_part( 'global-parts/navbar'); ?>
+                    <div class="mobile-menu d-flex justify-content-between">
+                        <a id="burger-menu" class="burger"></a>
                     </div>
+                    <div class="contact-buttons">
+                        <a href="/contact/" class="button-primary">Afspraak maken</a>
+                    </div>
+                </div>
             </section>
         </header><!-- #masthead -->

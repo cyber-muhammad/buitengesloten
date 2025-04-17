@@ -1,15 +1,15 @@
-<section class="regions fix section-black section-padding">
+<section class="regions">
     <div class="container">
         <div class="col-lg-8 col-xl-6 offset-xl-3 col-12 offset-lg-2 text-center">
             <div class="block-contents text-white">
-                <div class="section-title wow fadeInUp" data-wow-duration="1s">
+                <div class="section-title">
                     <h2>Regio's</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-xl-4 col-12">
-                <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                <div class="single-region-card">
                     <div class="region-header">
                         <div class="region-name">
                             <a href="/provincie-antwerpen/">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-4 col-12">
-                <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                <div class="single-region-card">
                     <div class="region-header">
                         <div class="region-name">
                             <a href="/provincie-vlaams-brabant/">
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-4 col-12">
-                <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                <div class="single-region-card">
                     <div class="region-header">
                         <div class="region-name">
                             <a href="/provincie-west-vlaanderen/">
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-4 col-12">
-                <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                <div class="single-region-card">
                     <div class="region-header">
                         <div class="region-name">
                             <a href="/provincie-limburg/">
@@ -105,7 +105,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-4 col-12">
-                <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                <div class="single-region-card">
                     <div class="region-header">
                         <div class="region-name">
                             <a href="/provincie-oost-vlaanderen/">
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-4 col-12">
-                <div class="single-region-card wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                <div class="single-region-card">
                     <div class="region-header">
                         <div class="region-name">
                             <a href="/provincie-brussel/">

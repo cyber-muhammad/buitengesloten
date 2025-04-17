@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         ?>
 </nav><!-- #site-navigation -->
 
-<div id="overlay" style="display: none;">
+<div id="overlay">
     <div class="site-branding mb-4 d-flex justify-content-between">
         <a href="/" class="d-flex align-items-center">
             <?php $brandLink = get_field('brand_logo', 'option'); ?>
