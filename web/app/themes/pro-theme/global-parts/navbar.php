@@ -50,5 +50,18 @@ $container = get_theme_mod( 'understrap_container_type' );
                 'walker'          => new WP_Bootstrap_Navwalker(),
             )
         );
-        ?>
+    ?>
+    
+    <!-- Contact Buttons -->
+    <div class="overlay-contact-buttons">
+        <div class="contact-button phone-button">
+            <?php echo do_shortcode('[phone_number icon="fa-solid fa-phone-volume" class="overlay-contact-link" id="overlay-phone"]'); ?>
+        </div>
+        <div class="contact-button email-button">
+            <?php echo do_shortcode('[email_address icon="fa-solid fa-envelope" class="overlay-contact-link" id="overlay-email"]'); ?>
+        </div>
+        <div class="contact-button quote-button">
+            <a href="/contact/" class="button-primary">Gratis Offerte</a>
+        </div>
+    </div>
 </div>

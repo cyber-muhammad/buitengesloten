@@ -3653,6 +3653,11 @@ textarea {
 	/* Start transparent */
 	visibility: hidden;
 	/* Hide initially */
+	overflow-y: auto;
+	/* Allow scrolling if content is tall */
+	display: flex;
+	flex-direction: column;
+	/* Contact Buttons */
 }
 
 #overlay.active {
@@ -3712,6 +3717,73 @@ textarea {
 
 #overlay .close-btn i {
 	font-size: 24px;
+}
+
+#overlay .overlay-contact-buttons {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	opacity: 0;
+	/* Start with hidden contact buttons */
+	transform: translateY(20px);
+	/* Slightly offset for animation */
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	transition-delay: 0.3s;
+	/* Appear after menu items */
+}
+
+#overlay .overlay-contact-buttons.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+#overlay .overlay-contact-buttons .contact-button {
+	margin-bottom: 1.5rem;
+}
+
+#overlay .overlay-contact-buttons .contact-button:last-child {
+	margin-bottom: 0;
+}
+
+#overlay .overlay-contact-buttons .contact-button a {
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size: 1.1rem;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+#overlay .overlay-contact-buttons .contact-button a:hover {
+	color: #fd7e14;
+}
+
+#overlay .overlay-contact-buttons .contact-button a i {
+	margin-right: 10px;
+	font-size: 1.2rem;
+}
+
+#overlay .overlay-contact-buttons .contact-button .button-primary {
+	display: inline-block;
+	background-color: #fd7e14;
+	color: white;
+	padding: 0.8rem 1.5rem;
+	border-radius: 4px;
+	font-weight: 600;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+	margin-top: 0.5rem;
+}
+
+#overlay .overlay-contact-buttons .contact-button .button-primary:hover {
+	background-color: #dc6502;
+	transform: translateY(-2px);
+	color: white;
+}
+
+#overlay .overlay-contact-buttons .contact-button.phone-button a {
+	color: #fd7e14;
+	font-weight: 700;
+	font-size: 1.3rem;
 }
 
 .mobile-call-button {
