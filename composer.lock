@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5bce69d02f8d829c564f4ee106af890",
+    "content-hash": "4c761fa0f60aca13010da2bf687a18c6",
     "packages": [
         {
             "name": "composer/installers",
@@ -1163,6 +1163,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/seo-by-rank-math/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-cloudflare-turnstile",
+            "version": "1.30.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-cloudflare-turnstile/",
+                "reference": "tags/1.30.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-cloudflare-turnstile.1.30.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-cloudflare-turnstile/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
