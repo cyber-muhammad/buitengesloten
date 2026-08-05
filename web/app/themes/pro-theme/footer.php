@@ -58,7 +58,7 @@
     <div class="footer-bottom clearfix">
         <div class="container">
             <div class="copyright">
-            © 2022 Slotenmaker All Rights Reserved - Privacybeleid - Gebruiksvoorwaarden - Cookie Instellingen
+            © <?php echo esc_html( date_i18n( 'Y' ) ); ?> Buitengesloten - Alle rechten voorbehouden<?php the_privacy_policy_link( ' - ' ); ?>
             </div>
         </div>
     </div>
